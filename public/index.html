@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gofile Uploader 2026</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">Gofile<span class="badge">Vercel</span></div>
+            <h1>File Uploader</h1>
+            <p>Upload file cepat, aman, dan gratis via Gofile API.</p>
+        </header>
+
+        <main>
+            <div class="upload-box" id="drop-area">
+                <input type="file" id="fileElem" hidden>
+                <div class="icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                </div>
+                <h3>Drag & Drop file di sini</h3>
+                <p>atau klik untuk menjelajah</p>
+                <button class="btn-select" onclick="document.getElementById('fileElem').click()">Pilih File</button>
+            </div>
+
+            <div id="status-container" class="hidden">
+                <div class="loader"></div>
+                <p id="status-text">Sedang memproses...</p>
+            </div>
+
+            <div id="result-container" class="hidden">
+                <div class="result-card">
+                    <span class="label">Download Link</span>
+                    <div class="link-group">
+                        <input type="text" id="file-link" readonly>
+                        <button id="copy-btn" onclick="copyLink()">Copy</button>
+                    </div>
+                    <div class="meta-info">
+                        <span id="file-name">file.jpg</span> &bull; <span id="file-size">0 MB</span>
+                    </div>
+                </div>
+                <button class="btn-reset" onclick="resetApp()">Upload Lagi</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by Node.js & Vercel</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
